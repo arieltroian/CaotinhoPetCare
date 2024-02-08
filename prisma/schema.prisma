@@ -30,6 +30,7 @@ model Service {
   petshop     Petshop   @relation(fields: [petshopId], references: [id])
   description String
   Booking     Booking[]
+  imageUrl String
 }
 
 model Booking {

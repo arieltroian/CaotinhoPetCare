@@ -124,6 +124,7 @@ async function seedDatabase() {
                 id: petshop.id,
               },
             },
+            imageUrl: service.imageUrl,
           },
         });
       }
