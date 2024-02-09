@@ -1,13 +1,21 @@
+"use client";
+
 import { Button } from "@/app/_components/ui/button";
 import { Card, CardContent } from "@/app/_components/ui/card";
 import { Petshop } from "@prisma/client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface PetShopItemProps {
   petshop: Petshop;
 }
 
 const PetShopItem = ({ petshop }: PetShopItemProps) => {
+  // useRouter rota para o id do petshop
+  const router = useRouter();
+  const handleBookingClick = () => {
+    router.push(`/petshops/${petshop.id}`);
+  };
   return (
     <Card className="min-w-[167px] max-w-[167px] rounded-2xl">
       <CardContent className="p-0">
@@ -28,7 +36,11 @@ const PetShopItem = ({ petshop }: PetShopItemProps) => {
           <p className="text-sm text-gray-400 overflow-hidden text-ellipsis text-nowrap">
             {petshop.address}
           </p>
-          <Button className="w-full mt-3" variant="secondary">
+          <Button
+            className="w-full mt-3"
+            variant="secondary"
+            onClick={handleBookingClick}
+          >
             Reservar
           </Button>
         </div>
