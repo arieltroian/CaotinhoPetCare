@@ -13,9 +13,9 @@ interface PetshopInfoProps {
 }
 
 const PetShopInfo = ({ petshop }: PetshopInfoProps) => {
-  const route = useRouter();
+  const router = useRouter();
   const handleBackClick = () => {
-    route.back();
+    router.replace("/");
   };
   return (
     <div>
