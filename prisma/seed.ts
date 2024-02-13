@@ -5,34 +5,23 @@ const prisma = new PrismaClient();
 async function seedDatabase() {
   try {
     const images = [
-      "https://i.ibb.co/yBQ9Z8P/alvan-nee-73flbl-FUks-Y-unsplash.jpg",
-      "https://i.ibb.co/h1nQjY3/berkay-gumustekin-ngqyo2-AYYn-E-unsplash.jpg",
-      "https://i.ibb.co/5MHmpCx/alvan-nee-T-0-EW-SEbs-E-unsplash.jpg",
-      "https://i.ibb.co/Ctkk3y0/james-barker-v3-zc-CWMjg-M-unsplash.jpg",
-      "https://i.ibb.co/k3xp0zP/bri-tucker-LGG5-P7-KCzi-U-unsplash.jpg",
-      "https://i.ibb.co/PZZdDKN/andrew-s-ouo1hbiz-Wwo-unsplash.jpg",
-      "https://i.ibb.co/ThXXXgP/pexels-pixabay-33492.jpg",
-      "https://i.ibb.co/q5j2MKH/pexels-cong-h-1404819.jpg",
-      "https://i.ibb.co/pnFFpRh/pexels-cats-coming-1543793.jpg",
-      "https://i.ibb.co/L5GtF9r/pexels-septimiu-lupea-669015.jpg",
-      "https://i.ibb.co/52Wgvbp/pexels-pixabay-416160.jpg",
-      "https://i.ibb.co/nBwtcNT/pexels-brett-sayles-1080760.jpg",
-      "https://i.ibb.co/hX3Y1J4/pexels-amit-talwar-3813324.jpg",
-      "https://i.ibb.co/s5L8dtb/pexels-chevanon-photography-1108099.jpg",
-      "https://i.ibb.co/CJm6wNN/pexels-ylanite-koppens-612813.jpg",
-      "https://i.ibb.co/HTqZ68H/pexels-martin-dalsgaard-6910000.jpg",
-      "https://i.ibb.co/qCghqbm/pexels-liam-ortiz-1840106.jpg",
-      "https://i.ibb.co/bHC4cDx/pexels-lumn-406014.jpg",
-      "https://i.ibb.co/6nkJhF6/pexels-pixabay-104827.jpg",
-      "https://i.ibb.co/ZgwBTRK/cachorro-fofo-na-loja-de-animais-com-o-dono.jpg",
-      "https://i.ibb.co/64n38RL/cachorro-fofo-com-dono-na-pet-shop.jpg",
+      "https://utfs.io/f/8ab3fe5f-493d-4ffa-829b-b570a8f43cb1-x7vfzr.png",
+      "https://utfs.io/f/eafea6cb-4c69-443f-98d2-25e8e1d576ab-x7vfvg.png",
+      "https://utfs.io/f/c68f7b49-59f8-4755-bb68-41b8dddb9df2-zci0o8.png",
+      "https://utfs.io/f/afecf235-dc8e-438b-ab0d-67af4bbdf4bd-a9hgxi..png",
+      "https://utfs.io/f/dd433494-ccc0-42d6-908d-6d65a83eb35a-x7vfx6.png",
+      "https://utfs.io/f/d92fe342-99bc-426d-a318-2fc7f9b58a1d-x7vfwb.png",
+      "https://utfs.io/f/338e53e3-1d00-4509-b816-67bd2a9dbae7-x7vful.png",
+      "https://utfs.io/f/86e29433-6279-4aed-b191-f3024740e5da-x7vfy1.png",
+      "https://utfs.io/f/b23e87a7-a581-4348-811f-910bb44ca8cf-x7vftq.png",
+      "https://utfs.io/f/a2bc225b-9106-4108-8045-40f01436385a-x7vfyw.png",
     ];
     // Nomes dos Pet Shops
     const creativeNames = [
       "Pata Real",
-      "Charme Animal",
+      "Bicharada",
       "PetStyle",
-      "Peludos & Mimados",
+      "Laços e Latidos",
       "Aconchego Pet",
       "Peludos & Cia.",
       "Pet Palace",
@@ -43,16 +32,16 @@ async function seedDatabase() {
 
     // Endereços fictícios dos Pet Shops
     const addresses = [
-      "Rua da Barbearia, 123",
-      "Avenida dos Cortes, 456",
-      "Praça da Barba, 789",
-      "Travessa da Navalha, 101",
-      "Alameda dos Estilos, 202",
-      "Estrada do Machado, 303",
-      "Avenida Elegante, 404",
-      "Praça da Aparência, 505",
+      "Caminho do Arco Celeste, 369",
+      "Avenida da Harmonia, 210",
+      "Rua das Quatro Estações, 654",
+      "Largo das Aventuras, 101",
+      "Estrada do Arco Celeste, 789",
+      "Rua do Horizonte, 789",
+      "Praça das Águas, 567",
+      "Estrada da Montanha, 234",
       "Rua Urbana, 606",
-      "Avenida Clássica, 707",
+      "Avenida da Brisa, 345",
     ];
 
     const services = [
