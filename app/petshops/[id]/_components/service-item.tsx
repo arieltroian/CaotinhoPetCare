@@ -20,6 +20,8 @@ import { generateDayTimeList } from "../_helpers/hours";
 import { format, setHours, setMinutes } from "date-fns";
 import { saveBooking } from "../_actions/save-booking";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 interface ServiceItemProps {
   petshop: Petshop;
@@ -32,10 +34,13 @@ const ServiceItem = ({
   petshop,
   isAuthenticaded,
 }: ServiceItemProps) => {
+  const router = useRouter();
   const { data } = useSession();
+
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [hour, setHour] = useState<String | undefined>();
   const [submitIsLoading, setSubmitIsLoading] = useState(false);
+  const [sheetIsOpen, setSeetIsOpen] = useState(false);
 
   const handleDateClick = (date: Date | undefined) => {
     setDate(date);
@@ -69,6 +74,18 @@ const ServiceItem = ({
         petshopId: petshop.id,
         date: newDate,
         userId: (data.user as any).id,
+      });
+      setSeetIsOpen(false);
+      setHour(undefined);
+      setDate(undefined);
+      toast("Reserva realizada com sucesso!", {
+        description: format(newDate, "'Para' dd 'de' MMMM 'às' HH':'mm'.'", {
+          locale: ptBR,
+        }),
+        action: {
+          label: "Vizualizar",
+          onClick: () => router.push("/bookings"),
+        },
       });
     } catch (error) {
       console.log(error);
@@ -109,7 +126,7 @@ const ServiceItem = ({
                   currency: "BRL",
                 }).format(Number(service.price))}
               </p>
-              <Sheet>
+              <Sheet open={sheetIsOpen} onOpenChange={setSeetIsOpen}>
                 <SheetTrigger asChild>
                   <Button variant="secondary" onClick={handleBookingClick}>
                     Reservar
@@ -118,11 +135,12 @@ const ServiceItem = ({
 
                 <SheetContent className="p-0">
                   <SheetHeader className="text-left px-5 py-6 border-b border-solid border-secondary">
-                    <SheetTitle>Fazer eserva</SheetTitle>
+                    <SheetTitle>Fazer Reserva</SheetTitle>
                   </SheetHeader>
 
-                  <div className="py-6">
+                  <div className="py-6 px-5">
                     <Calendar
+                      className=""
                       mode="single"
                       selected={date}
                       onSelect={handleDateClick}
@@ -140,12 +158,12 @@ const ServiceItem = ({
                           width: "100%",
                         },
                         nav_button_previous: {
-                          width: "32px",
-                          height: "32px",
+                          width: "2rem",
+                          height: "2rem",
                         },
                         nav_button_next: {
-                          width: "32px",
-                          height: "32px",
+                          width: "2rem",
+                          height: "2rem",
                         },
                         caption: {
                           textTransform: "capitalize",
