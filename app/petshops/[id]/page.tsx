@@ -37,6 +37,7 @@ const PetshopDetailsPage = async ({ params }: PetshopDetailsPageProps) => {
         {petshop.services.map((service) => (
           <ServiceItem
             key={service.id}
+            petshop={petshop}
             service={service}
             isAuthenticaded={!!session?.user}
           />
