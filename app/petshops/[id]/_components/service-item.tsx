@@ -155,7 +155,7 @@ const ServiceItem = ({
 
           <div className="flex flex-col w-full">
             <h2 className="font-bold">{service.name}</h2>
-            <p className="text-sm text-gray-400">{service.description}</p>
+            <p className="text-sm text-gray-700">{service.description}</p>
 
             <div className="flex itmes-center justify-between mt-2">
               <p className="text-sm font-bold text-primary">
@@ -178,7 +178,6 @@ const ServiceItem = ({
 
                   <div className="py-6 px-5">
                     <Calendar
-                      className=""
                       mode="single"
                       selected={date}
                       onSelect={handleDateClick}
@@ -241,7 +240,7 @@ const ServiceItem = ({
                         </div>
                         {date && (
                           <div className="flex justify-between">
-                            <h3 className="text-sm text-gray-400">Data</h3>
+                            <h3 className="text-sm text-gray-700">Data</h3>
                             <h4 className="text-sm ">
                               {format(date, "dd 'de' MMMM", {
                                 locale: ptBR,
@@ -252,16 +251,16 @@ const ServiceItem = ({
 
                         {hour && (
                           <div className="flex justify-between">
-                            <h3 className="text-sm text-gray-400">Horário</h3>
+                            <h3 className="text-sm text-gray-700">Horário</h3>
                             <h4 className="text-sm ">{hour}</h4>
                           </div>
                         )}
                         <div className="flex justify-between">
-                          <h3 className="text-sm text-gray-400">Pet Shop</h3>
+                          <h3 className="text-sm text-gray-700">Pet Shop</h3>
                           <h4 className="text-sm ">{petshop.name}</h4>
                         </div>
                         <div className="flex justify-between">
-                          <h3 className="text-sm text-gray-400">Endereço</h3>
+                          <h3 className="text-sm text-gray-700">Endereço</h3>
                           <h4 className="text-sm ">{petshop.address}</h4>
                         </div>
                       </CardContent>

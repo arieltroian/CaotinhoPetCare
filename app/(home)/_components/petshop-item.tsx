@@ -33,7 +33,7 @@ const PetShopItem = ({ petshop }: PetShopItemProps) => {
           <h2 className="font-bold mt-2 overflow-hidden text-ellipsis text-nowrap">
             {petshop.name}
           </h2>
-          <p className="text-sm text-gray-400 overflow-hidden text-ellipsis text-nowrap">
+          <p className="text-sm text-gray-700 overflow-hidden text-ellipsis text-nowrap">
             {petshop.address}
           </p>
           <Button
