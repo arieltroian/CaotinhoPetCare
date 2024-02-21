@@ -5,10 +5,30 @@ import Search from "./_components/search";
 import BookingItem from "../_components/booking-item";
 import { db } from "../_lib/prisma";
 import PetShopItem from "./_components/petshop-item";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export default async function Home() {
-  // Chamar prisma e pegar pet shops
-  const petshops = await db.petshop.findMany({});
+  const session = await getServerSession(authOptions);
+
+  const [petshops, confirmedBookings] = await Promise.all([
+    db.petshop.findMany({}),
+
+    session?.user
+      ? db.booking.findMany({
+          where: {
+            userId: (session.user as any).id,
+            date: {
+              gte: new Date(),
+            },
+          },
+          include: {
+            service: true,
+            petshop: true,
+          },
+        })
+      : Promise.resolve([]),
+  ]);
 
   return (
     <div>
@@ -26,12 +46,17 @@ export default async function Home() {
         <Search />
       </div>
 
-      {/* <div className="px-5 mt-6">
-        <h2 className="mb-3 text-xs uppercase text-gray-400 font-bold">
+      <div className="">
+        <h2 className="mb-3 px-5 mt-6 text-xs uppercase text-gray-700 font-bold">
           Agendamentos
         </h2>
-        <BookingItem />
-      </div> */}
+        {/* deixar apenas agendamentos confirmados */}
+        <div className="flex px-5 mt-6 gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+          {confirmedBookings.map((booking) => (
+            <BookingItem key={booking.id} booking={booking} />
+          ))}
+        </div>
+      </div>
 
       <div className="mt-6">
         <h2 className="px-5 mb-3 text-xs uppercase text-gray-700 font-bold">
