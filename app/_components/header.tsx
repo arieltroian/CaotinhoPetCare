@@ -12,10 +12,11 @@ const Header = () => {
       <CardContent className="p-5 flex items-center justify-between">
         <Link href="/">
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt="Cãotinho PetCare"
             height={22}
             width={140}
+            sizes="100vw"
           />
         </Link>
         <Sheet>

@@ -17,7 +17,7 @@ interface BookingItemProps {
 const BookingItem = ({ booking }: BookingItemProps) => {
   const isBookingConfirmed = isPast(booking.date);
   return (
-    <Card>
+    <Card className="min-w-[70%]">
       <CardContent className="px-0 py-0 flex">
         <div className="flex flex-col flex-[3] gap-2 py-5 pl-5">
           <Badge
@@ -30,7 +30,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
 
           <div className="flex items-center gap-2">
             <Avatar className="h-8 w-8">
-              <AvatarImage src={booking.petshop.imageUrl} />
+              <AvatarImage src={booking.petshop.imageUrl} sizes="100vw" />
               <AvatarFallback>A</AvatarFallback>
             </Avatar>
             <h3 className="text-sm">{booking.petshop.name}</h3>

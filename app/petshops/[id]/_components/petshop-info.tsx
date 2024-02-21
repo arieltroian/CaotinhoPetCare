@@ -53,6 +53,7 @@ const PetShopInfo = ({ petshop }: PetshopInfoProps) => {
             objectFit: "cover",
           }}
           className="opacity-75"
+          sizes="100vw"
         />
       </div>
 
