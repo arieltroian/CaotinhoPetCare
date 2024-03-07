@@ -1,6 +1,6 @@
 <h1 align="center" style="font-weight: bold;">Cãotinho PetCare</h1>
 
-<p>Projeto em andamento 🚧</p>
+<p>🚧 Projeto em andamento 🚧</p>
 
 ### Cãotinho PetCare é uma aplicação FullStack desenvolvida para facilitar o agendamento de serviços de PetCare!
 
