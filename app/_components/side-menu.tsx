@@ -21,20 +21,20 @@ const SideMenu = () => {
   const handleLoginClick = () => signIn("google");
   return (
     <>
-      <SheetHeader className="p-5 text-left border-b border-solid border-secondary">
+      <SheetHeader className="p-5 text-left border-b -solid border-border">
         <SheetTitle>Menu</SheetTitle>
       </SheetHeader>
 
       {data?.user ? (
         <div className="flex justify-between items-center px-5 py-6">
-          <div className="flex items-center gap-3 ">
+          <div className="flex items-center gap-3">
             <Avatar>
               <AvatarImage src={data.user?.image ?? ""} sizes="100vw" />
             </Avatar>
 
-            <h2 className="font-bold">{data.user.name}</h2>
+            <h2>{data.user.name}</h2>
           </div>
-          <Button variant="secondary" size="icon" onClick={handleLogoutClick}>
+          <Button variant="ghost" size="icon" onClick={handleLogoutClick}>
             <LogOutIcon />
           </Button>
         </div>
@@ -56,17 +56,17 @@ const SideMenu = () => {
       )}
 
       <div className="flex flex-col gap-3 px-5">
-        <Button variant="outline" asChild>
+        <Button className=" justify-start" variant="outline" asChild>
           <Link href="/">
-            <HomeIcon className="mr-2" size={20} />
+            <HomeIcon className="mr-2 text-foreground" size={20} />
             Início
           </Link>
         </Button>
 
         {data?.user && (
-          <Button variant="outline" asChild>
+          <Button className=" justify-start" variant="outline" asChild>
             <Link href="/bookings">
-              <CalendarIcon className="mr-2" size={20} />
+              <CalendarIcon className="mr-2 text-foreground" size={20} />
               Agendamentos
             </Link>
           </Button>

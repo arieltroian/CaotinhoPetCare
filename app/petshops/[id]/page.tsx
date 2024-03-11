@@ -33,7 +33,22 @@ const PetshopDetailsPage = async ({ params }: PetshopDetailsPageProps) => {
     <div>
       <PetShopInfo petshop={petshop} />
 
-      <div className="px-5 flex flex-col gap-4 py-6">
+      <h2 className="px-5 py-6 lg:px-28 text-xs lg:text-sm uppercase text-gray-700 font-bold">
+        Serviços Disponíveis
+      </h2>
+
+      <div className="px-5 lg:hidden flex flex-col gap-4">
+        {petshop.services.map((service) => (
+          <ServiceItem
+            key={service.id}
+            petshop={petshop}
+            service={service}
+            isAuthenticaded={!!session?.user}
+          />
+        ))}
+      </div>
+
+      <div className="max-lg:hidden grid grid-cols-2 px-28 gap-4 mb-6">
         {petshop.services.map((service) => (
           <ServiceItem
             key={service.id}

@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <div className="w-full rounded-lg border border-input bg-card shadow-sm py-6 px-5">
-      <p className="text-gray-700 text-xs font-bold opacity-75">
-        © 2024 Copyright Cãotinho PetCare
+    <div className="w-full bg-background border border-input shadow-lg py-10 flex items-center justify-center">
+      <p className="text-gray-800 text-xs">
+        © 2024 Copyright <span className="font-bold">Cãotinho PetCare</span>
       </p>
     </div>
   );

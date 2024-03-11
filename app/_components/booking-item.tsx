@@ -62,7 +62,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Card className="min-w-[70%]">
+        <Card className="min-w-[70%] shadow-lg">
           <CardContent className="px-0 py-0 flex">
             <div className="flex flex-col flex-[3] gap-2 py-5 pl-5">
               <Badge
@@ -96,7 +96,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
       </SheetTrigger>
 
       <SheetContent className="px-0">
-        <SheetHeader className="text-left pb-6 px-5 border-b border-solid border-secondary">
+        <SheetHeader className="text-left pb-6 px-5 border-b border-solid border-border">
           <SheetTitle>Informações da Reserva</SheetTitle>
         </SheetHeader>
 
@@ -116,7 +116,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
                   </Avatar>
                   <div>
                     <h2 className="font-bold">{booking.petshop.name}</h2>
-                    <h3 className="text-xs overflow-hidden text-nowrap text-ellipsis">
+                    <h3 className="text-xs text-slate-600 overflow-hidden text-nowrap text-ellipsis">
                       {booking.petshop.address}
                     </h3>
                   </div>
@@ -161,7 +161,9 @@ const BookingItem = ({ booking }: BookingItemProps) => {
               </div>
               <div className="flex justify-between">
                 <h3 className="text-sm text-gray-700">Endereço</h3>
-                <h4 className="text-sm ">{booking.petshop.address}</h4>
+                <h4 className="text-sm text-slate-600 ">
+                  {booking.petshop.address}
+                </h4>
               </div>
             </CardContent>
           </Card>
