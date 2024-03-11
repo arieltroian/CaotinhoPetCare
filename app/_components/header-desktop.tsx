@@ -23,7 +23,7 @@ const HeaderDesktop = () => {
     <Card className="bg-background rounded-none">
       <CardContent className="px-28 py-4 flex items-center justify-between">
         <Link href="/">
-          <h1 className="font-extrabold text-2xl text-primary drop-shadow-xl hover:-translate-y-1 hover:scale-110 duration-300">
+          <h1 className="font-extrabold text-2xl p-2 rounded-sm bg-secondary text-background drop-shadow-xl hover:-translate-y-1 hover:scale-110 duration-300">
             Cãotinho
           </h1>
         </Link>

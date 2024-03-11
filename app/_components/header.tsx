@@ -13,7 +13,7 @@ const Header = () => {
       <Card className="lg:hidden bg-background rounded-none">
         <CardContent className="p-5 flex items-center justify-between">
           <Link href="/">
-            <h1 className="font-extrabold text-2xl text-primary drop-shadow-xl hover:-translate-y-1 hover:scale-110 duration-300">
+            <h1 className="font-extrabold text-2xl p-2 rounded-sm bg-secondary text-background drop-shadow-xl hover:-translate-y-1 hover:scale-110 duration-300">
               Cãotinho
             </h1>
           </Link>

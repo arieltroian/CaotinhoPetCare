@@ -155,7 +155,7 @@ const ServiceItem = ({
             <p className="text-sm text-gray-700">{service.description}</p>
 
             <div className="flex itmes-center justify-between mt-2">
-              <p className="text-sm font-bold text-primary">
+              <p className="text-sm font-bold text-accent">
                 {Intl.NumberFormat("pt-BR", {
                   style: "currency",
                   currency: "BRL",
