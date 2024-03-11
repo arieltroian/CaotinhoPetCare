@@ -17,7 +17,7 @@ import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { generateDayTimeList } from "../_helpers/hours";
-import { format, setHours, setMinutes } from "date-fns";
+import { addDays, format, setHours, setMinutes } from "date-fns";
 import { saveBooking } from "../_actions/save-booking";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
@@ -115,9 +115,6 @@ const ServiceItem = ({
     }
 
     return generateDayTimeList(date).filter((time) => {
-      // time: "9:00"
-      // Se houver alguma reserva em "  dayBookings" com a hora e minutos igual a time, não incluir
-
       const timeHour = Number(time.split(":")[0]);
       const timeMinutes = Number(time.split(":")[1]);
 
@@ -139,7 +136,7 @@ const ServiceItem = ({
   return (
     <Card>
       <CardContent className="p-3">
-        <div className="flex gap-4 items-center w-full">
+        <div className="flex gap-4 items-center w-full hover:bg-white">
           <div className="relative min-h-[110px] min-w-[110px] max-h-[110px]">
             <Image
               src={service.imageUrl}
@@ -166,13 +163,17 @@ const ServiceItem = ({
               </p>
               <Sheet open={sheetIsOpen} onOpenChange={setSeetIsOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="secondary" onClick={handleBookingClick}>
+                  <Button
+                    className="drop-shadow-xl transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                    variant="secondary"
+                    onClick={handleBookingClick}
+                  >
                     Reservar
                   </Button>
                 </SheetTrigger>
 
                 <SheetContent className="p-0">
-                  <SheetHeader className="text-left px-5 py-6 border-b border-solid border-secondary">
+                  <SheetHeader className="text-left px-5 py-6 border-b border-solid border-border">
                     <SheetTitle>Fazer Reserva</SheetTitle>
                   </SheetHeader>
 
@@ -182,7 +183,7 @@ const ServiceItem = ({
                       selected={date}
                       onSelect={handleDateClick}
                       locale={ptBR}
-                      fromDate={new Date()}
+                      fromDate={addDays(new Date(), 1)}
                       styles={{
                         head_cell: {
                           width: "100%",
@@ -212,7 +213,7 @@ const ServiceItem = ({
                   {/* Mostrar lista de horários apenas se alguma data estiver selecionada */}
 
                   {date && (
-                    <div className="flex gap-3 py-6 px-5 border-t border-solid border-secondary overflow-x-auto [&::-webkit-scrollbar]:hidden">
+                    <div className="flex gap-3 py-6 px-5 border-t border-solid border-border overflow-x-auto [&::-webkit-scrollbar]:hidden">
                       {timeList.map((time) => (
                         <Button
                           onClick={() => handleHourClick(time)}
@@ -226,7 +227,7 @@ const ServiceItem = ({
                     </div>
                   )}
 
-                  <div className="py-6 px-5 border-t border-solid border-secondary">
+                  <div className="py-6 px-5 border-t border-solid border-border">
                     <Card>
                       <CardContent className="flex flex-col gap-3 p-3">
                         <div className="flex justify-between">
@@ -261,7 +262,7 @@ const ServiceItem = ({
                         </div>
                         <div className="flex justify-between">
                           <h3 className="text-sm text-gray-700">Endereço</h3>
-                          <h4 className="text-sm ">{petshop.address}</h4>
+                          <h4 className="text-sm">{petshop.address}</h4>
                         </div>
                       </CardContent>
                     </Card>
