@@ -173,11 +173,11 @@ const ServiceItem = ({
                 </SheetTrigger>
 
                 <SheetContent className="p-0">
-                  <SheetHeader className="text-left px-5 py-6 border-b border-solid border-border">
+                  <SheetHeader className="text-left px-6 py-5 border-b border-solid border-border">
                     <SheetTitle>Fazer Reserva</SheetTitle>
                   </SheetHeader>
 
-                  <div className="py-6 px-5">
+                  <div className="px-2 py-5">
                     <Calendar
                       mode="single"
                       selected={date}
@@ -213,7 +213,7 @@ const ServiceItem = ({
                   {/* Mostrar lista de horários apenas se alguma data estiver selecionada */}
 
                   {date && (
-                    <div className="flex gap-3 py-6 px-5 border-t border-solid border-border overflow-x-auto [&::-webkit-scrollbar]:hidden">
+                    <div className="flex gap-3 px-6 py-5 border-t border-solid border-border overflow-x-auto">
                       {timeList.map((time) => (
                         <Button
                           onClick={() => handleHourClick(time)}
@@ -227,7 +227,7 @@ const ServiceItem = ({
                     </div>
                   )}
 
-                  <div className="py-6 px-5 border-t border-solid border-border">
+                  <div className="px-6 py-5 border-t border-solid border-border">
                     <Card>
                       <CardContent className="flex flex-col gap-3 p-3">
                         <div className="flex justify-between">
@@ -262,12 +262,14 @@ const ServiceItem = ({
                         </div>
                         <div className="flex justify-between">
                           <h3 className="text-sm text-gray-700">Endereço</h3>
-                          <h4 className="text-sm">{petshop.address}</h4>
+                          <h4 className="text-sm overflow-hidden text-ellipsis text-nowrap">
+                            {petshop.address}
+                          </h4>
                         </div>
                       </CardContent>
                     </Card>
                   </div>
-                  <SheetFooter className="px-5">
+                  <SheetFooter className="px-6 py-5">
                     <Button
                       onClick={handleBookingSubmit}
                       disabled={!hour || !date || submitIsLoading}
