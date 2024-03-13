@@ -1,10 +1,16 @@
-<h1 align="center" style="font-weight: bold;">Cãotinho PetCare</h1>
+<div align="center">
+  <h1 style="font-weight: bold;">Cãotinho Pet Care</h1>
+  <img src="./public/readme-banner.png" alt="Banner Cãotinho Pet Care" height="480em">
+</div>
 
-<p>🚧 Projeto em andamento 🚧</p>
+## Sobre o projeto
+Cãotinho é uma aplicação FullStack desenvolvida para facilitar o agendamento de serviços de Pet Care!
 
-### Cãotinho PetCare é uma aplicação FullStack desenvolvida para facilitar o agendamento de serviços de PetCare!
+<div align="center">
+  <img alt="Status Concluído" src="https://img.shields.io/badge/STATUS-CONCLU%C3%8DDO-brightgreen">
+</div>
 
-## Stack do projeto
+## Tecnologias
 <div style="display:inline_block">
   <h3>Linguagem:</h3>
      <img align="center" alt="TypeScript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
@@ -21,6 +27,12 @@
   <h3>Banco de Dados e ORM:</h3>
     <img align="center" alt="Supabase" src="https://img.shields.io/badge/Supabase-181818?style=for-the-badge&logo=supabase&logoColor=white"/>
     <img align="center" alt="Prisma" src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white"/>
+</div>
+
+## Layout
+<div>
+  <h3>Mobile:</h3>
+  <h3>Web:</h3>
 </div>
 
 
