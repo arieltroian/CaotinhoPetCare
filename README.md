@@ -11,7 +11,7 @@ Cãotinho é uma aplicação FullStack desenvolvida para facilitar o agendamento
 </div>
 
 ## Tecnologias
-<div style="display:inline_block">
+  <div style="display:inline_block">
   <h3>Linguagem:</h3>
      <img align="center" alt="TypeScript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
 
@@ -30,9 +30,14 @@ Cãotinho é uma aplicação FullStack desenvolvida para facilitar o agendamento
 </div>
 
 ## Layout
-<div>
+  <div style="display:inline_block" align="center">
   <h3>Mobile:</h3>
+    <img src="./public/mobile-mockup.png" alt="Responsividade do layout em dispositivos mobile" height="350em"> 
+    <img src="./public/tablet-mockup.png" alt="Responsividade do layout em dispositivos mobile" height="350em" >
+    
   <h3>Web:</h3>
-</div>
+    <img src="./public/laptop-mockup.png" alt="Responsividade do layout em dispositivos mobile" height="280em"> 
+    <img src="./public/computer-mockup.png" alt="Responsividade do layout em dispositivos mobile" height="280em"> 
+  </div>
 
 
