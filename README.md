@@ -32,12 +32,10 @@ Cãotinho é uma aplicação FullStack desenvolvida para facilitar o agendamento
 ## Layout
   <div style="display:inline_block" align="center">
   <h3>Mobile:</h3>
-    <img src="./public/mobile-mockup.png" alt="Responsividade do layout em dispositivos mobile" height="350em"> 
-    <img src="./public/tablet-mockup.png" alt="Responsividade do layout em dispositivos mobile" height="350em" >
+    <img src="./public/mockup-mobile.png" alt="Responsividade do layout em dispositivos mobile" height="350em"> 
     
   <h3>Web:</h3>
-    <img src="./public/laptop-mockup.png" alt="Responsividade do layout em dispositivos mobile" height="280em"> 
-    <img src="./public/computer-mockup.png" alt="Responsividade do layout em dispositivos mobile" height="280em"> 
+    <img src="./public/mockup-lg-screen.png" alt="Responsividade do layout em dispositivos mobile" height="280em"> 
   </div>
 
 
